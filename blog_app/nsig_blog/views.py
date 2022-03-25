@@ -11,7 +11,7 @@ from django.utils import timezone
 # Create your views here.
 
 class AboutView(TemplateView):
-    template_name='about.html'
+    template_name='nsig_blog/about.html'
 
 class PostListView (ListView):
     model=Post

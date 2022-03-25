@@ -25,7 +25,7 @@ class Post(models.Model):
         return reverse("post_detail",kwargs={'pk':self.pk})
 
 class Comment(models.Model):
-    post=models.ForeignKey('Blog.Post', related_name='comments', on_delete=models.CASCADE) #connects each comment to a post
+    post=models.ForeignKey('nsig_blog.Post', related_name='comments', on_delete=models.CASCADE) #connects each comment to a post
     author=models.CharField(max_length=100)
     text=models.TextField()
     create_date=models.DateTimeField(default=timezone.now)
