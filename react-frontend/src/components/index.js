@@ -11,6 +11,7 @@ import Faq from "./faq/Faq";
 import Features from "./features/Features";
 import Places from "./places/Places";
 import FaqAll from "./faq/FaqAll";
+import SingleFaq from "./faq/SingleFaq"
 
 export {
   About,
@@ -26,4 +27,5 @@ export {
   Features,
   Places,
   FaqAll,
+  SingleFaq
 };

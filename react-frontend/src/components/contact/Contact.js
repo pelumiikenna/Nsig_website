@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Content } from "../../styles/globalStyles";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useForm, ValidationError } from "@formspree/react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Contact = () => {
   const [messageDetails, setMessageDetails] = useState({
@@ -27,13 +27,12 @@ const Contact = () => {
 
   if (state.succeeded) {
     return (
-      <div className="form-success-msg">
+      <div className="form-success-msg alert-success">
         <h4>Thank you for getting in touch!</h4>
-        <p>
-          We will reply shortly. Have a great
-          day !
-        </p>
-        <Link className="btn btn-extra" to="/">Go to Home page</Link>
+        <p>We will reply shortly. Have a great day !</p>
+        <Link className="btn btn-extra" to="/">
+          Go to Home page
+        </Link>
       </div>
     );
   }
@@ -58,13 +57,7 @@ const Contact = () => {
             </li>
           </ul>
         </div>
-        {/* 
-        <form
-          className="form"
-          action="https://formspree.io/f/xgerznqq"
-          method="POST"
-        > */}
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={(handleSubmit)} className="form">
           <label
             className="form-label"
             style={{ fontSize: "15px" }}

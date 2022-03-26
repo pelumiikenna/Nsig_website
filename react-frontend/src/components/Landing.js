@@ -1,8 +1,8 @@
 import React from "react";
-import landingVideo from "../images/landing.mp4";
+import landingVideo from "../images/landingVideo.mp4";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import { Features } from ".";
-import { Faq, Places } from ".";
+import { Faq} from ".";
 
 const Landing = () => {
   const navigate = useNavigate();

@@ -1,21 +1,14 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   background: var(--clr-black);
-  box-shadow: var(--dark-shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-
-  @media (max-width: 800px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 `;
 
 export const FooterContent = styled.div`
@@ -24,7 +17,6 @@ export const FooterContent = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap-row: 25px;
 
   @media (min-width: 800px) {
     max-width: 1170px;
@@ -59,14 +51,24 @@ export const SocialLinks = styled.ul`
 `;
 
 export const FooterText = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10px;
   width: 100%;
-  margin-top: 20px;
+  margin: 10px auto;
   text-align: center;
-  letter-spacing:var(--spacing);
+  letter-spacing: var(--spacing);
   color: var(--gold);
 
   span {
     color: var(--nisig-green);
+  }
+
+  em {
+    margin-left: 20px;
+    font-size: 10px;
+    display: inline-block;
+    color: var(--clr-grey-7);
   }
 `;

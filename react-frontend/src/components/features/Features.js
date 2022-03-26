@@ -27,21 +27,6 @@ const Features = () => {
     });
   };
 
-  // useEffect(() => {
-  //   let slider = setInterval(() => {
-  //     setIndex((oldIndex) => {
-  //       let index = oldIndex + 1;
-  //       if (index > activities.length - 1) {
-  //         index = 0;
-  //       }
-  //       return index;
-  //     });
-  //   }, 5000);
-  //   return () => {
-  //     clearInterval(slider);
-  //   };
-  // }, [index, activities]);
-
   return (
     <FeatureContainer>
       <h3 className="title">Features</h3>

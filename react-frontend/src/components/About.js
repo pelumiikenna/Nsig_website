@@ -4,6 +4,7 @@ import { Profiles } from ".";
 const About = () => {
   return (
     <Content className="section">
+      <h2>About Us</h2>
       <div>
         <h3>Our Mission</h3>
         <p>

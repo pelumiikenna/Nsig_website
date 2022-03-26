@@ -9,7 +9,8 @@ import {
   Blog,
   Contact,
   Places,
-  FaqAll
+  FaqAll,
+  SingleFaq
 } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/places" element={<Places />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq-all/:id/*" element={<SingleFaq />} />
           <Route path="/faq-all" element={<FaqAll />} />
           <Route path="*" element={<Error />} />
         </Routes>

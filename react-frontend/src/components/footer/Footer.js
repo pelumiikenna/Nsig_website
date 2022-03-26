@@ -15,7 +15,7 @@ const Footer = () => {
   const currentDate = new Date().toLocaleDateString("en-US", options);
 
   return (
-    <FooterContainer className="footer">
+    <FooterContainer>
       <FooterContent className="footer-content">
         <FooterLinks className="footer-links">
           {links.map((link) => {
@@ -39,8 +39,11 @@ const Footer = () => {
           })}
         </SocialLinks>
 
-        <FooterText className="footer-text">
-          <span> &copy; {currentDate}  </span>Nisig Bremen
+        <FooterText>
+          <div>
+            <span> &copy; {currentDate} </span>Nisig Bremen
+          </div>
+          <em>logo by LogoMakr.com/app</em>
         </FooterText>
       </FooterContent>
     </FooterContainer>
