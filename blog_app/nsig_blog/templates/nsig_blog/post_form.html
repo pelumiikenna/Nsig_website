@@ -2,15 +2,40 @@
 
 
 {% block bodyblk %}
-    <h1>New post</h1>
-
-    <form method="POST" class="post-form">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-
-    <script>var editor = new MediumEditor('.editable');</script>
-
+<div class="container postcreate ">
+    <div class="d-flex justify-content-center mb-4">
+        <h1 id="form-title">New post</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <form class="postcr-widt" method="POST" >
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="input-group mb-2 d-flex justify-content-left postcrform">
+            <span>{{ field.label}}:&emsp;</span>
+            {% if field.label == 'Text' %}
+            <span class="">
+               {{ field }}
+            </span>
+            {% else %}
+            <div class="">
+               <p>{{ field }}</p> 
+            </div>
+            {% endif %}
+            
+        </div>
+        {% endfor %}
+        <button type="submit" class="save btn mt-3 post-btn">Save</button>
+        </form>
+    </div>
+    
+</div>
+{% comment %}
+<script>var editor = new MediumEditor('.editable',
+    
+    );</script>
+{% endcomment %}    
+<script>var editor = new MediumEditor('.editable',
+    
+    );</script>
 
 {% endblock %}

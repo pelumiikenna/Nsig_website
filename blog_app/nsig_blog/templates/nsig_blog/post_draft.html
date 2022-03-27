@@ -1,0 +1,20 @@
+{% extends "nsig_blog/base.html" %}
+
+
+{% block bodyblk %}
+<h2>Drafts</h2>
+<div class="postlist-con row">
+    {% for post in post_draft %}
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+        <div class="postlist-bs">
+            <p class="date"> created: {{ post.create_date|date:'d-m-Y' }}</p>
+            <p class="postlist-titl mt-4"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
+            <div class="draftlist-bs">
+                <p  class=""> {{ post.text|truncatechars:100|safe }} </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  
+</div>
+{% endblock %}
