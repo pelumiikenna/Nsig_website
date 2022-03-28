@@ -10,20 +10,21 @@ export default function SingleFaq() {
 
   const matchingFaq = posts.find((post) => post.id == id);
   return (
-    <FaqContainer className=" section-content section">
+    <div className=" section-content section">
       <div>
         <div className="details">
           <h2>Faq - {id}</h2>
           <p>{matchingFaq.title}</p>
           <p>{matchingFaq.info}</p>
-          <button 
-            className="button btn btn-extra"
+          <button
+            className="btn btn-extra"
+            style={{ marginLeft: "0px" }}
             onClick={() => navigate("/faq-all")}
           >
             All Faq
           </button>
         </div>
       </div>
-    </FaqContainer>
+    </div>
   );
 }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ProfileContainer = styled.div`
   max-width: 1170px;
   margin: 30px auto;
+  
   h3 {
     text-align: center;
     margin-bottom: 30px;

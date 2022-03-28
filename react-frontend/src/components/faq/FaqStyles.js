@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const FaqContainer = styled.div`
   /* background-color: ${({ theme }) => theme.colors.sectionBody}; */
-  .button {
-    margin-left: 0;
-  }
-
+ 
   > .title {
     text-align: center;
     padding-top: 20px;
