@@ -18,13 +18,19 @@ const Blog = () => {
       .catch((error) => setError(error.message));
   }, []);
 
-  if (error) return <h1>{error}</h1>;
+  if (error)
+    return (
+      <div className="error">
+        <h3>{error}</h3>
+        <Link to="/">back home</Link>
+      </div>
+    );
 
   return (
-    <ProfileContainer className="blog-container">
+    <ProfileContainer>
       <h3> Most recent blog posts</h3>
 
-      <ProfileContent className="blog-content">
+      <ProfileContent>
         {posts.slice(0, 9).map((post) => {
           var options = { year: "numeric", month: "long", day: "numeric" };
           const currentDate = new Date().toLocaleDateString("en-US", options);

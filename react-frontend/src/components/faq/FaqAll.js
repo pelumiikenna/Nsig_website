@@ -14,7 +14,7 @@ const FaqAll = () => {
   });
 
   return (
-    <ProfileContainer className="containers">
+    <ProfileContainer>
       <div className="faq-all-div">
         <h3>All Faq's</h3>
         <div>

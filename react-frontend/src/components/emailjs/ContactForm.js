@@ -27,8 +27,6 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
     e.preventDefault();
     setButtonContent("...loading");
 

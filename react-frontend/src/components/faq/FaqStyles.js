@@ -29,4 +29,26 @@ export const FaqContainer = styled.div`
     max-width: var(--max-width);
     /* max-width: var(--fixed-width); */
   }
+  .containers {
+    margin: 30px auto 50px;
+  }
+
+  .faq-all-post {
+    height: 230px;
+    border: 1px solid var(--gold);
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .faq-all-post h5 {
+    margin-bottom: 20px;
+  }
+
+  .faq-all-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    align-items: center;
+    height: 40px;
+  }
 `;

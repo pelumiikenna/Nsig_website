@@ -1,7 +1,7 @@
 function SingleBlogPost(props) {
   const { id, title, body, time } = props.data;
   return (
-    <div className="">
+    <div>
       <h4>{title.substring(0, 20)}</h4>
       <p className="post-body">
         {body.substring(0, 80)}...{" "}

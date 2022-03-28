@@ -6,7 +6,7 @@ const OtherInfo = () => {
     <OtherInfoContainer>
       {" "}
       <h3>Experience Bremen</h3>
-      <p className="landing-places">
+      <p>
         Bremen is a beautiful city. Its inhabitants are amongst the nicest
         people you will find in Germany. Low cost of living , and a friendly
         environment makes it a perfect choice for your study and work life.
@@ -15,7 +15,7 @@ const OtherInfo = () => {
           ...see more
         </Link>
       </p>
-      <p style={{ width: "80vw", maxWidth: "" }}>
+      <p>
         Be involved, and contribute to our commmunity life, share experiences
         and information with others
         <Link to="/blog" className="landing-link">
