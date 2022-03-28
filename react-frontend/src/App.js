@@ -2,15 +2,15 @@ import {
   Navbar,
   Footer,
   About,
-  Faq,
+  FaqLanding,
   Register,
   Error,
   Landing,
   Blog,
-  Contact,
   Places,
   FaqAll,
-  SingleFaq
+  SingleFaqPostDetails,
+  ContactForm,
 } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -27,14 +27,15 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/*" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
-          <Route path="/faq" element={<Faq />} />
+          <Route path="/faq" element={<FaqLanding/>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/register" element={<Register />} />
           <Route path="/places" element={<Places />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq-all/:id/*" element={<SingleFaq />} />
+
+          <Route path="/contact" element={<ContactForm />} />
+          <Route path="/faq-all/:id/*" element={<SingleFaqPostDetails />} />
           <Route path="/faq-all" element={<FaqAll />} />
           <Route path="*" element={<Error />} />
         </Routes>
@@ -45,9 +46,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-

@@ -2,7 +2,6 @@ import React from "react";
 import { ProfileContainer, ProfileContent } from "./ProfilesStyles";
 
 import { profiles } from "../../data.js";
-import Logo from "../../images/logo.png";
 const Profiles = () => {
   return (
     <ProfileContainer>

@@ -28,7 +28,7 @@ const Faq = () => {
   return (
     <FaqContainer>
       <h3 className="title">Faq</h3>
-      <div className="title-underline" style={{ width: "2rem" }}></div>
+      <div className="title-underline"></div>
       <div className="container">
         <section>
           {faqs.map((faq) => {

@@ -3,7 +3,7 @@ import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 export const links = [
   {
     id: 1,
-    url: "/home",
+    url: "/",
     text: "home",
   },
   {
@@ -187,6 +187,22 @@ export const locations = [
     id: 10,
     title: "Club Zero",
     category: "hangout",
+    img: "places-images/city-center.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    website: "https://webmail.uni-bremen.de/",
+  },
+  {
+    id: 11,
+    title: "Dr. Leo",
+    category: "Doctors",
+    img: "places-images/city-center.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    website: "https://webmail.uni-bremen.de/",
+  },
+  {
+    id: 12,
+    title: "Dr. Stephanie",
+    category: "Doctors",
     img: "places-images/city-center.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     website: "https://webmail.uni-bremen.de/",

@@ -1,31 +1,32 @@
 import About from "./About";
 import Error from "./Error";
 import Footer from "./footer/Footer";
-import Landing from "./Landing";
+import Landing from "./landing/Landing";
 import Navbar from "./Navbar";
 import Register from "./Register";
 import Profiles from "./profiles/Profiles";
 import Blog from "./blog/Blog";
-import Contact from "./contact/Contact";
-import Faq from "./faq/Faq";
+
+import FaqLanding from "./faq/FaqLanding";
 import Features from "./features/Features";
 import Places from "./places/Places";
 import FaqAll from "./faq/FaqAll";
-import SingleFaq from "./faq/SingleFaq"
+import SingleFaqPostDetails from "./faq/SingleFaqPostDetails";
+import ContactForm from "./emailjs/ContactForm";
 
 export {
   About,
   Error,
   Footer,
-  Faq,
+  FaqLanding,
   Landing,
   Navbar,
   Register,
   Profiles,
   Blog,
-  Contact,
   Features,
   Places,
   FaqAll,
-  SingleFaq
+  SingleFaqPostDetails,
+  ContactForm,
 };

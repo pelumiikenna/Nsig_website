@@ -1,9 +1,10 @@
 import React from "react";
 import { Content } from "../styles/globalStyles";
 import { Profiles } from ".";
+import { FaCcDiscover } from "react-icons/fa";
 const About = () => {
   return (
-    <Content className="section">
+    <div className=".section-content section">
       <h2>About Us</h2>
       <div>
         <h3>Our Mission</h3>
@@ -57,7 +58,7 @@ const About = () => {
         </p>
       </div>
       <Profiles />
-    </Content>
+    </div>
   );
 };
 

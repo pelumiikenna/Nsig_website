@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
   max-width: 1170px;
-  margin-bottom: 30px;
+  margin: 30px auto;
   h3 {
     text-align: center;
     margin-bottom: 30px;
@@ -11,14 +11,17 @@ export const ProfileContainer = styled.div`
 
 export const ProfileContent = styled.div`
   display: grid;
-  grid-gap: 2rem;
+  gap: 2rem;
   place-items: center;
+  max-width: 90%;
+  margin-left:auto;
+  margin-right:auto;
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
-  div {
+    div {
     max-width: 400px;
     box-shadow: var(--light-shadow);
     padding: 2rem;

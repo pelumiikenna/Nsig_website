@@ -18,6 +18,7 @@ const Navbar = () => {
     }
   };
 
+  // event to check scroll event on navbar and keep it in a fixed/sticky position
   window.addEventListener("scroll", changeNavbarColor);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const Navbar = () => {
   }, [showLinks]);
 
   return (
-    <nav style={ colorChange ?   {zIndex : 10} : {}}>
+    <nav style={colorChange ? { zIndex: 10 } : {}}>
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
@@ -43,10 +44,21 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-
         {/* {`${showLinks? 'links-container show-container' :'links-container'}`} */}
         <div className="links-container" ref={linksContainerRef}>
-          <ul className="links" ref={linksRef}>
+          <ul
+            className="links"
+            ref={linksRef}
+            onMouseLeave={() => setShowLinks(false)}
+            onClick={() => {
+              setShowLinks(false);
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }
+          >
             {links.map((link) => {
               const { id, url, text } = link;
               return (
@@ -58,6 +70,7 @@ const Navbar = () => {
           </ul>
         </div>
 
+        {/* return social links */}
         <ul className="social-icons">
           {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
