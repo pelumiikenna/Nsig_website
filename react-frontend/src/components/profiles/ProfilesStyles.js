@@ -54,7 +54,7 @@ export const ProfileContainer = styled.div`
   .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .prev-page,
@@ -63,22 +63,24 @@ export const ProfileContainer = styled.div`
     border: none;
     color: var(--clr-grey-5);
     box-shadow: var(--light-shadow);
+    border: 2px solid var(--gold);
     margin: 0 10px;
     cursor: pointer;
     padding: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
   }
   .prev-page,
   .next-page {
-    font-size: var(--large-text);
+    font-size: var(--small-text);
+    background: var(--clr-black);
+    color: var(--nisig-green);
   }
 
   .paginationItem {
     background: var(--clr-grey-10);
-    border: 2px solid var(--clr-grey-10);
     padding: 10px 15px;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
     position: relative;
     margin: 0 5px;
     cursor: pointer;
@@ -103,6 +105,7 @@ export const ProfileContainer = styled.div`
     pointer-events: none;
     box-shadow: none;
     color: var(--clr-grey-1);
+   
 
     /* end of pagination */
   }
@@ -143,7 +146,7 @@ export const ProfileContent = styled.div`
     font-size: var(--extra-small-text);
 
     a {
-      color : var(--gold);
+      color: var(--gold);
     }
   }
   /* end of singleBlog style */
