@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProfileContainer = styled.div`
   max-width: 1170px;
   margin: 30px auto;
-  
+
   h3 {
     text-align: center;
     margin-bottom: 30px;
@@ -16,7 +16,7 @@ export const ProfileContainer = styled.div`
     height: 40px;
   }
   .faq-all-post {
-    height: 230px;
+    height: 200px;
     border: 1px solid var(--gold);
     width: 95%;
     margin: 0 auto;
@@ -120,6 +120,34 @@ export const ProfileContent = styled.div`
     border-bottom: 0.5px dotted var(--clr-grey-5);
     padding-bottom: 10px;
   }
+
+  /* singleFaq style */
+  .single-faq-div {
+    box-shadow: rgba(0, 0, 0, 0.1) 10px 10px;
+  }
+
+  .link-faq h5 {
+    color: var(--clr-black);
+  }
+  .link-faq P {
+    color: var(--clr-black);
+    font-size: var(--extra-small-text);
+  }
+  /* end of singleFaq style */
+
+  /* singleBlog style */
+  .blog-shadow {
+    background: var(--btn-shadows1);
+    border: 1px solid var(--nisig-green);
+    box-shadow: rgba(0, 0, 0, 0.1) -10px 10px;
+    font-size: var(--extra-small-text);
+
+    a {
+      color : var(--gold);
+    }
+  }
+  /* end of singleBlog style */
+
   @media (min-width: 700px) {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }

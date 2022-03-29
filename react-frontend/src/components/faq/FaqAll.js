@@ -55,3 +55,6 @@ const FaqAll = () => {
 };
 
 export default FaqAll;
+
+
+// css styles are available in the ProfileStyles,js file

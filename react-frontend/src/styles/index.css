@@ -20,13 +20,13 @@ Variables
   --clr-grey-1: hsl(211, 24%, 81%);
   --clr-grey-2: hsl(211, 30%, 85%);
   --clr-grey-3: hsl(210, 9%, 79%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-4: #48647f;
   /* grey used for paragraphs */
   --clr-grey-5: hsl(210, 22%, 49%);
   --clr-grey-6: hsl(209, 23%, 60%);
   --clr-grey-7: hsl(211, 27%, 70%);
   --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-9: #dae2ec;
   --clr-grey-10: hsl(210, 36%, 96%);
   --text-color: #102a43;
   /* secondary colors */
@@ -35,6 +35,7 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 21%, 21%);
   --clr-green-light: #19f849;
+  --clr-green-lighter: #a5e6b3;
   /* main colors */
   --nisig-green: #008834;
   --gold: #a57600;
@@ -58,6 +59,44 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --btn-shadows1: linear-gradient(
+    330deg,
+    hsl(211deg 24% 81%) 0%,
+    hsl(211deg 24% 79%) 1%,
+    hsl(211deg 24% 76%) 3%,
+    hsl(211deg 24% 74%) 4%,
+    hsl(211deg 24% 72%) 6%,
+    hsl(211deg 23% 69%) 9%,
+    hsl(211deg 23% 67%) 12%,
+    hsl(211deg 23% 65%) 16%,
+    hsl(211deg 23% 63%) 22%,
+    hsl(210deg 22% 61%) 41%,
+    hsl(210deg 22% 59%) 62%,
+    hsl(210deg 22% 56%) 70%,
+    hsl(210deg 21% 54%) 76%,
+    hsl(210deg 21% 52%) 80%,
+    hsl(210deg 20% 50%) 84%,
+    hsl(210deg 21% 48%) 88%,
+    hsl(210deg 23% 46%) 91%,
+    hsl(210deg 24% 45%) 93%,
+    hsl(210deg 25% 43%) 96%,
+    hsl(210deg 26% 41%) 98%,
+    hsl(209deg 28% 39%) 100%
+  );
+
+  --btn-shadows2: linear-gradient(
+    45deg,
+    hsl(43deg 100% 32%) 0%,
+    hsl(47deg 100% 30%) 22%,
+    hsl(53deg 100% 28%) 40%,
+    hsl(59deg 100% 25%) 55%,
+    hsl(66deg 100% 25%) 66%,
+    hsl(74deg 97% 26%) 75%,
+    hsl(84deg 78% 29%) 81%,
+    hsl(98deg 64% 32%) 85%,
+    hsl(116deg 54% 35%) 89%,
+    hsl(143deg 100% 27%) 100%
+  );
 }
 
 html {
@@ -155,10 +194,9 @@ p {
 .btn-extra {
   display: block;
   padding: 1rem 2rem;
-  border: 2px solid var(--gold);
   margin: 2rem auto 0;
   color: var(--gold);
-  box-shadow: var(--light-shadow);
+  box-shadow: var(--dark-shadow);
 }
 
 .btn-hero {
@@ -344,7 +382,7 @@ nav {
   height: 10rem;
 }
 
-.question {
+/* .question {
   padding: 1rem 1.5rem;
   border: 5px solid var(--clr-grey-10);
   margin-bottom: 1rem;
@@ -370,7 +408,7 @@ nav {
 .question header h4 {
   text-align: left;
   margin-bottom: 0;
-}
+} */
 
 .form-success-msg {
   display: flex;

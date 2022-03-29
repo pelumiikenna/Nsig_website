@@ -1,7 +1,7 @@
 function SingleBlogPost(props) {
   const { id, title, body, time } = props.data;
   return (
-    <div>
+    <div className="blog-shadow">
       <h4>{title.substring(0, 20)}</h4>
       <p className="post-body">
         {body.substring(0, 80)}...{" "}
@@ -10,7 +10,7 @@ function SingleBlogPost(props) {
           target="_blank"
           rel="noreferrer"
         >
-          Read
+          Read more
         </a>
       </p>
       <span>last updated : {time}</span>
