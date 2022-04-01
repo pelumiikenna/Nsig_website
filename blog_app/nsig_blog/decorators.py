@@ -23,6 +23,7 @@ def auth_required(in_func):
     return wrapper_func
 
 ## redirect to home page when users is not admin
+# does not work
 def not_admin(in_func):
     def wrapper_func(request, *args, **kwargs):
         if not request.user.is_staff:
