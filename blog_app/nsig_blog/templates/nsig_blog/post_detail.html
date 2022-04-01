@@ -3,52 +3,91 @@
 
 {% block bodyblk %}
   
-    <h1 class="posttitle ">{{post.title}}</h1>
+    <h1 class="posttitle posttitl ">{{post.title}}</h1>
 
     {% if post.published_date %}
       <div class="date postdate ">
         <p> Author: {{post.author}} &emsp; {{ post.published_date }}</p>
       </div>
     {% else %}
+      {% if publishercheck %}
       <a class="btn post-btn" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+      {% endif %}
     {% endif %}
-    <div>
-     <p class="postcontent">{{ post.text|safe|linebreaksbr}}</p>
+    <hr class="postborder">
+    <div class="postcontent-done"> {{ post.text|safe|linebreaksbr}}
     </div>
 
     {% if user.is_authenticated %}
+      {% if publishercheck %}
       <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}">
-         <i class="fas fa-pencil"></i>
-      </a>
+        <i class="fas fa-pencil"></i>
+     </a>
+      {% endif %}
+      {% for group_for in request.user.groups.all %}
+      {% if publishercheck or user.is_superuser or group_for.name == 'exco' %}
       <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}">
         <span ><i class="fa-solid fa-trash"></i></span>
     </a>
+      {% endif %}
+      {% endfor %}
     {% endif %}
 
-
-
     <hr>
-    <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-    <div class="container">
+    {% if user.is_authenticated %}
+      {% if post.hidden %}
+        {% if user.is_superuser %}
+        <a class="btn btn-primary " href="{% url 'unhide_post' pk=post.pk %}">Unhide Post</a>
+        {% else %}
+        <a class="btn btn-danger" href="">Post hidden by admin</a>
+        {% endif %}
+      {% else %}
+        {% if user.is_superuser %}
+        <a class="btn btn-primary" href="{% url 'hide_post' pk=post.pk %}">Hide Post</a>
+        {% endif %}
+      {% endif %}
+      <a class="btn btn-primary btn-comment" href="">Add Comment</a>
+      {% else %}
+      <a class="btn btn-primary btn-comment" href="{% url 'nsig_blog_login' %}">Sign in to add comment</a>
+    {% endif %}
 
+    {% if user.is_authenticated %}
+    <h1 class="mt-5" id="comment-title">New comment</h1>
+    <div class=" commentcreate">
+      <form method="POST" class="post-form">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="input-group mb-2 d-flex justify-content-left postcrform">
+          <span>{{ field.label}}:&emsp;</span>
+          {% if field.label == 'Text' %}
+          <span class="">
+              {{ field }}
+          </span>
+          {% endif %}
+      </div>
+      {% endfor %}
+      <button type="submit" class="save btn mt-1 post-btn">Comment</button>
+      </form>
+  </div>
+  {% endif %}
 
-        {% for comment in post.comments.all %}
-        <br>
-            {% if user.is_authenticated or comment.approved_comment %}
-
-                    {{ comment.created_date }}
-                    {% if not comment.approved_comment %}
-                        <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                        <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
-                    {% endif %}
-
-                <p>{{ comment.text|safe|linebreaks }}</p>
-                <p>Posted by: <strong>{{ comment.author }}</strong></p>
-
-            {% endif %}
-        {% empty %}
-            <p>No comments posted.</p>
-        {% endfor %}
+    <div class=" mt-3">
+      <hr class="comtcont">
+      {% for comment in post.comments.all %}
+          <div class=" mb-2">
+            <div class="comtcont">{{ comment.text|safe }} </div>
+            <div class="comtdate">{{ comment.create_date|date:'d-m-Y' }}&emsp; <a class="comtdate" href="">{{ comment.author }}</a>  &emsp;
+              {% if  user.is_superuser or commentercheck == comment.author%}
+              <a class="btn btn-primary deleter" href="{% url 'comment_remove' pk=comment.pk %}"> <span ><i class="fa-solid fa-trash"></i></span></a>
+              {% endif %}
+            </div> 
+          </div>
+        <hr class="comtcont">
+    {% endfor %}
+    {% if post.approve_comments.count == 0%}
+    <p class="mb-4">No comments posted.</p>
+    {% endif %}
     </div>
 
+    <script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}

@@ -1,16 +1,23 @@
 {% extends "nsig_blog/base.html" %}
 
 {% block bodyblk %}
-<h2>Posts</h2>
+<div class=" d-flex justify-content-center" >
+    <h2>Recent Posts</h2>
+</div>
 <div class="postlist-con row">
     {% for post in post_list %}
 
     <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
         <div class="postlist-bs">
-            <p class="postlist-titl mt-4"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
+            <p class="postlist-titl mt-4"><a class="posttitl" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
+            <div class="postcont mb-5"> {{ post.text|truncatewords:10|safe }}<a class="commentcolor" href="{% url 'post_detail' pk=post.pk %}">read more</a> </div>
+            {% comment %}
+            <p class="postcont"> {{ post.text|slice:"3:100"|safe }}... <a class="commentcolor" href="{% url 'post_detail' pk=post.pk %}">read more</a> </p>
+            {% endcomment %}
             <div >
+                <hr>
                 <p class="postlist-p"> Published on: {{ post.published_date|date:"D M Y" }} <br> Author: {{ post.author}} <br>     
-                <a href="{% url 'post_detail' pk=post.pk %}" >Comments: {{ post.approve_comments.count }}</a>
+                <a class="commentcolor" href="{% url 'post_detail' pk=post.pk %}" >Comments: {{ post.approve_comments.count }}</a>
             </p>
             </div>
         </div>

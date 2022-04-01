@@ -22,19 +22,21 @@
     <title>Document</title>
 </head>
 <body class="">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  techfont loader" style="background-color: #e3f2fd;">
-        <a href="{% url 'post_list' %}" class="navbar-brand bigbrand"><img src="{% static 'logo/download.png' %}" alt="NSIG Bremen Logo"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  techfont loader">
+        <a href="https://nisig-website.netlify.app/" class="navbar-brand bigbrand"><img src="{% static 'logo/download.png' %}" alt="NSIG Bremen Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav  midnav">
                 <li class="nav-item active" ><a href="{% url 'post_list' %}" class="nav-link navtex navtex">Blog</a></li>
-                <li class="nav-item"><a href="https://github.com/david13pod" class="nav-link navtex">Github</a></li>
-                <li class="nav-item"><a href="https://www.linkedin.com/in/oluwapelumi-o-296805a1/" class="nav-link navtex">Linkedin</a></li>        
+                <li class="nav-item"><a href="https://nisig-website.netlify.app/" class="nav-link navtex">Home</a></li>          
+                <li class="nav-item"><a href="https://nisig-website.netlify.app/about" class="nav-link navtex">About</a></li>          
+                <li class="nav-item"><a href="https://nisig-website.netlify.app/contact" class="nav-link navtex">Contact</a></li>          
+                <li class="nav-item"><a href="https://nisig-website.netlify.app/faq-all" class="nav-link navtex">FAQ</a></li>          
             </ul>
             
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto rightnav">
                 {% if user.is_authenticated %}
                 <li>
                     <a class="nav-link navtex" href="{% url 'post_new' %}">New Post</a>
@@ -42,6 +44,11 @@
                 <li>
                     <a class="nav-link navtex" href="{% url 'post_draft' %}">Drafts</a>
                 </li>
+                {% if user.is_superuser %}
+                <li>
+                    <a class="nav-link navtex" href="{% url 'admin:index' %}">Admin</a>
+                </li>
+                {% endif %}
                 <li>
                     <a class="nav-link navtex" href="{% url 'nsig_blog_logout' %}">Log out</a>
                 </li>

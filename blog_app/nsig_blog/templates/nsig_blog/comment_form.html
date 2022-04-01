@@ -1,12 +1,25 @@
 {% extends "nsig_blog/base.html" %}
 
 {% block bodyblk %}
-    <h1>New comment</h1>
+<div class="container postcreate">
+    <div class="d-flex justify-content-center mt-3 mb-4">
+        <h1 id="form-title">New comment</h1>
+    </div>
     <form method="POST" class="post-form">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="save btn btn-default">Post Comment</button>
+    {% for field in form %}
+    <div class="input-group mb-2 d-flex justify-content-left postcrform">
+        <span>{{ field.label}}:&emsp;</span>
+        {% if field.label == 'Text' %}
+        <span class="">
+            {{ field }}
+        </span>
+        {% endif %}
+        
+    </div>
+    {% endfor %}
+    <button type="submit" class="save btn mt-3 post-btn">Save</button>
     </form>
-
+</div>
     <script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}
