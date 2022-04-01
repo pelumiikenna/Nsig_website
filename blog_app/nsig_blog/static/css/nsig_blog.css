@@ -1,43 +1,4 @@
 
-/*COLOR CHANGER*/
-/*Credit and Source: http://codepen.io/thapliyalshivam/pen/dvgXVO*/
-.loader{
-  filter:hue-rotate(0deg);
-  color: linear-gradient(45deg,#0f8,#08f);
-  animation:hue 5000ms infinite linear;
-}
-
-@keyframes spinify {
-  0% {
-    transform: translate(0px,0px);
-
-  }
-  33% {
-    transform: translate(0px,24px);
-    border-radius:100%;
-    width:10px;
-    height:10px;
-
-  }
-   66% {
-    transform:translate(0px,-16px);
-  }
-
-   88% {
-    transform:translate(0px,4px);
-
-  }
-  100% {
-    transform:translate(0px,0px);
-  }
-}
-@keyframes hue{
-  0%{filter: hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}
-
-}
-
-
 body{
   font-size: 16px;
 }
@@ -49,19 +10,31 @@ body{
   /* font-family: 'Russo One', sans-serif; */
   font-size: 1.0em;
   margin-bottom: 10px;
+  padding-left: 10vw;
+  /* #FFD700, #f7ba5b */
 }
 .techfont1{
   font-family: 'Russo One', sans-serif;
   font-size: 1.2vw;
   margin-bottom: 10px;
 }
+.midnav{
+  /* padding-left: 5vw; */
+}
+.rightnav{
+  font-size: 0.9vw;
+}
 .navtex{
-  color: #0fa128 !important;
+  color: #d6a400e1 !important;
+  /* #FFD700, #f7ba5b */
 }
 
 
 /* post contents / post forms */
-
+.draftdate{
+  font-size: 0.8em;
+  color: #d6a400e1 !important;
+}
 .postdate{
   text-align: center;
 }
@@ -71,17 +44,30 @@ body{
   font-size: 3em;
   text-align: center;
 }
-
+.postborder{
+  border: 1px solid rgb(204, 157, 2);
+}
 .postcontent{
   font-family: 'Montserrat';
   font-size: 1em;
-  border: 1px solid rgb(204, 157, 2);
   width: 45vw;
+  border: 1px solid rgb(204, 157, 2);
+  /* background-color: antiquewhite; */
+  /* word-wrap: break-word; */
+}
+.postcontent-done{
+  font-family: sans-serif;
+  font-size: 0.9em;
+  width: 49vw;  
   /* background-color: antiquewhite; */
   /* word-wrap: break-word; */
 }
 .postcreate{
   width: 66% !important;
+}
+.commentcreate{
+  width: 100% !important;
+  margin-left: 0% !important;
 }
 .postcr-widt{
   width: 100% !important;
@@ -97,17 +83,43 @@ body{
   height: 20vw;
 }
 .postlist-titl{
-  height: 5vw;
+  height: 3vw;
   font-weight: bold;
   font-size: 0.9em;
+}
+.posttitl{
+  color: #000000;
+}
+.commentcolor{
+  color: #cc9d02e1 !important;
 }
 .postlist-bs{
   border: 1px solid rgb(204, 157, 2);
   border-radius: 10px;
   padding-left: 15px;
   margin-right: 15px;
+  /* background-color: #617d98; */
+  background-image: linear-gradient(to right, #617d98, #c5c9ce);
+  box-shadow: 10px 10px 8px #c5c5c5;
+}
+.postcont{
+  font-size: 0.7em !important;
+  height: 2.5vw;
+}
+.comtcont{
+  font-size: 1em !important;
+  width: 70%;
+  margin-left: 0%;
+}
+.comtdate{
+  font-size: 0.9em !important;
+}
+.deleter{
+  /* height: 20px; */
+  font-size: 10px;
 }
 .draftlist-bs{
+  font-size: 0.9em !important;
   height: 80px;
 }
 .btn-comment{
@@ -154,8 +166,12 @@ body{
 #form-title{
 color: rgb(8, 0, 0);
 font-weight: bolder;
-font-size: 1.5em;
-  
+font-size: 1.5em; 
+}
+#comment-title{
+color: rgb(8, 0, 0);
+font-weight: bolder;
+font-size: 1.1em; 
 }
 .login_btn {
   background: #33ccff !important;
