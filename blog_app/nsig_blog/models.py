@@ -12,6 +12,7 @@ class Post(models.Model):
     title=models.CharField(max_length=200)
     create_date=models.DateTimeField(default=timezone.now)
     text=models.TextField()
+    hidden=models.BooleanField(default=False)
 
     def __str__(self) :
         return self.title
@@ -30,7 +31,7 @@ class Comment(models.Model):
     post=models.ForeignKey('nsig_blog.Post', related_name='comments', on_delete=models.CASCADE) #connects each comment to a post
     author=models.CharField(max_length=100)
     text=models.TextField()
-    create_date=models.DateTimeField(default=timezone.now)
+    create_date=models.DateTimeField(default=timezone.now, blank=True,null=True)
     approved_comment=models.BooleanField(default=False)
 
     def approve(self):
