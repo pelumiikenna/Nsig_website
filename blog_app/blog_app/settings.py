@@ -26,7 +26,7 @@ SECRET_KEY = '*%%rjhs!=k192z#cdsw_l4=&wt7@tt+r=$s!38*1kk@y4%qyl$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','nsig-blog.herokuapp.com']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'blog_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME' : 'd7dojtepmvlbjn',
+        'HOST' : 'ec2-54-173-77-184.compute-1.amazonaws.com',
+        'PORT' : 5432,
+        'USER' : 'pdptjeqtquhkly',
+        'PASSWORD' : '2e20f9c7b6da4bd5034187ab34b365158d54a256b218ac9d02594a83813b54ea',
     }
 }
 
@@ -114,7 +118,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
