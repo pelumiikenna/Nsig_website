@@ -58,7 +58,7 @@ body{
 .postcontent-done{
   font-family: sans-serif;
   font-size: 0.9em;
-  width: 49vw;  
+  /* width: 49vw;   */
   /* background-color: antiquewhite; */
   /* word-wrap: break-word; */
 }
